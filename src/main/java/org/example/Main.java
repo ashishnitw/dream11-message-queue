@@ -27,7 +27,7 @@ public class Main {
             topicManager.produce(producer1, new Message<>("Message 3"));
 
             topicManager.startConsumer(consumer1);
-            //topicManager.startConsumer(consumer2);
+            topicManager.startConsumer(consumer2);
 
         } catch (Exception e) {
             System.out.println("Exception: " + e.getMessage());

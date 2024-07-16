@@ -14,8 +14,6 @@ S
 c
 3src/main/java/org/example/service/TopicManager.java,b/a/ba0a16127dab7082b70d83d7022ab5a2c4f8cc4a
 f
-6src/main/java/org/example/exception/TopicNotExist.java,7/c/7c8b80a1f509fc78a3ec3605076111f85498fbab
-f
 6src/main/java/org/example/exception/TopicNotFound.java,0/3/03ec1f8bc59c5d3e45b212c9f5610ff5e411b951
 j
 :src/main/java/org/example/exception/TopicAlreadyExist.java,a/2/a27cafdf8ae862e4f9f77faa076949a251dc5e29

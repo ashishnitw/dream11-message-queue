@@ -19,13 +19,13 @@ public class Consumer<T> implements Runnable {
     @Override
     public void run() {
         while(true) {
-            for (Map.Entry<Topic<T>, Integer> e : offsets.entrySet()) {
-                List<Message<T>> list = e.getKey().getQueue();
-                int offset = e.getValue();
-                System.out.println(offset + ", " + list.size());
-                if (offset < list.size()) {
-                    System.out.println("Message Consumed by : " + id + ", " + list.get(offset) + ", offset = " + offset++);
-                    offsets.put(e.getKey(), offset);
+            for (Map.Entry<Topic<T>, Integer> entry : offsets.entrySet()) {
+                Topic<T> topic = entry.getKey();
+                Integer offset = entry.getValue();
+                List<Message<T>> queue = topic.getQueue();
+                if (offset < queue.size()) {
+                    System.out.println("Consumer " + id + " consumed message: " + queue.get(offset).getContent());
+                    entry.setValue(offset + 1);
                 }
             }
         }
